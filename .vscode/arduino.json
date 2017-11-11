@@ -1,0 +1,5 @@
+{
+    "board": "digistump:avr:digispark-tiny",
+    "port": "COM1",
+    "sketch": "Resistance_KEY_prac.ino"
+}
