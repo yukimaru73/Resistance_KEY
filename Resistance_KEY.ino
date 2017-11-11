@@ -18,7 +18,7 @@ void setup() {
 }
 
 void loop() {
-	if(isSwitchPushed()) return;
+	if(!isSwitchPushed()) return;
 
 
 }
@@ -43,6 +43,13 @@ void digiSparkSetUp(){
 	digitalWrite(PIN_LED,HIGH);
 	DigiMouse.begin();
 	digitalWrite(PIN_LED,LOW);
+}
+
+void clickLeft(int holdButtonTime){
+	DigiMouse.setButtons(1<<0);
+	DigiMouse.delay(holdButtonTime);
+	DigiMouse.setButtons(0);
+	DigiMouse.update();
 }
 
 void moveCursor(int x, int y, const int px_per_ms, const int ms_delay){
